@@ -1702,3 +1702,5 @@ org.eclipse.core.runtime.CoreException: Variable references non-existent resourc
 2023-02-10 13:03:35,698 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\gjesu\Documents\Repositorios\TestViafirma\PdfAdding\src\main\resources
 2023-02-10 13:03:35,702 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\gjesu\Documents\Repositorios\TestViafirma\PdfAdding\src\test\resources
 2023-02-10 14:04:14,252 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-02-13 18:48:22,592 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2023-02-14 10:19:18,397 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
