@@ -1,13 +1,16 @@
 package com.ergame.viafirmatest.PdfAdding.service;
 
+import java.nio.file.Path;
+
 public class EnvService {
 	
-	public static String getEnvVar(String envName) {
+	public static Path getEnvVar(String envName) {
 		
-		String path = null;
+		Path path = null;
 		
 		try {
-			path = System.getenv(envName);
+			String pathStr = System.getenv(envName);
+			path = Path.of(pathStr);
 		}
 		catch (SecurityException se){
 			//TODO LOG de excepcion
