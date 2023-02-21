@@ -5,20 +5,14 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.stream.Stream;
 
-import com.ergame.viafirmatest.PdfAdding.service.EnvService;
 import com.ergame.viafirmatest.PdfAdding.service.PdfBoxService;
 
 
 public class PdfAddingController {
 	
 	public static void pdfAdding(String location) {
-		Path path;
-		if (location == "VIAFIRMA_PATH") {
-			path = EnvService.getEnvVar(location);
-		}
-		else {
-			path = Path.of(location);
-		}
+		
+		Path path = Path.of(location);
 
 		List<File> pdfs = Stream.of(new File(path.toString()).listFiles())
 				.filter(file -> file.getName().contains("."))
