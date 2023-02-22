@@ -3,8 +3,9 @@
 Java and maven application that add a blank page to every pdf file in a directory.
 
 You can run the application with the next command line:
-`java PdfAdding/src/main/java/com/ergame/viafirmatest/PdfAdding/App.java 'YourDirectory'`
-
+```
+java PdfAdding/src/main/java/com/ergame/viafirmatest/PdfAdding/App.java 'YourDirectory'
+```
 
 
 ### ¿Cómo harías para poder ejecutar N veces el proceso sobre el mismo directorio y solo modificar cada pdf una sola vez?
