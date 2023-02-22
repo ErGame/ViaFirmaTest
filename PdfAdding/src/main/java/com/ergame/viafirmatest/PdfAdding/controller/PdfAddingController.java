@@ -1,8 +1,10 @@
 package com.ergame.viafirmatest.PdfAdding.controller;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Stream;
@@ -14,7 +16,8 @@ public class PdfAddingController {
 	
 	public static void pdfAdding(String location) {
 		
-		Logger logger = Logger.getLogger("PdfAdding");
+		Logger newLogger = Logger.getLogger("PdfAdding");
+		Logger logger = loggerInitialazing(newLogger);
 		
 		Path path = Path.of(location);
 		
@@ -37,6 +40,25 @@ public class PdfAddingController {
 	private static Boolean isPdf(File file) {
 		
 		return file.getName().substring(file.getName().lastIndexOf(".") + 1).equals("pdf");
+	}
+	
+	private  static Logger loggerInitialazing(Logger logger) {
+		
+		
+		Path logPath = Path.of(System.getProperty("user.dir")).resolve("log").resolve("log");
+		new File(Path.of(System.getProperty("user.dir")).resolve("log").toString()).mkdir();
+		try {
+			FileHandler handler = new FileHandler(logPath.toString());
+			logger.addHandler(handler);
+			logger.log(Level.INFO, "Log file created correctly: " + logPath.toString());
+		} catch (SecurityException e) {
+			logger.log(Level.WARNING, "Security error. Handler can´t be created");
+			e.printStackTrace();
+		} catch (IOException e) {
+			logger.log(Level.WARNING, "Input/Output error. Handler can´t be created");
+			e.printStackTrace();
+		}
+		return logger;
 	}
 
 }
