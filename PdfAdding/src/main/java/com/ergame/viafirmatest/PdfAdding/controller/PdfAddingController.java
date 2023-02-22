@@ -35,7 +35,8 @@ public class PdfAddingController {
 	}
 	
 	private static Boolean isPdf(File file) {
-		return "pdf" == file.getName().substring(file.getName().lastIndexOf(".") + 1);
+		
+		return file.getName().substring(file.getName().lastIndexOf(".") + 1).equals("pdf");
 	}
 
 }
